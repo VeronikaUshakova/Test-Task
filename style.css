@@ -1,0 +1,40 @@
+body{
+    margin:3%;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+table{
+    margin-top: 1%;
+    border-color: gray;
+    text-align: center;
+}
+thead {
+    background-color: lightgrey;
+}
+.one-size{
+    height: 2em;
+    width: 12em;
+    border-radius: 10px;
+}
+.form_add{
+    width: 50%;
+}
+.col-sm-3 button{
+    width:100%;
+}
+.form_button{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    background-color: lightgrey;
+    border: 1px solid black;
+}
+.form_add .form-group{
+    margin-top: 5%;
+}
+button:focus{
+    outline: none;
+}
