@@ -12,13 +12,45 @@
             <h3>Calendar</h3>
         </div>
         <div class="header_function">
-            <select class="one-size">
-                <option>All members</option>
-            </select>
-            <button class="one-size">New event+</button>
+            <div>
+                <select class="one-size" id="all_members">
+                    <option>All members</option>
+                </select>
+                <button type="button" class="btn btn-primary one-size text-body" data-toggle="modal" data-target="#addParticipant">Add participant</button>
+            </div>
+            <div>
+                <button class="one-size btn btn-primary text-body">Refresh</button>
+                <a href="create.html"><button class="one-size btn btn-primary text-body">New event+</button></a>
+            </div>
+            <div>
+                <button class="one-size btn btn-primary text-body">Create pdf</button>
+            </div>
         </div>
     </div>
-
+    <div class="modal fade" id="addParticipant" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add participant</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="addParticipant_name" class="col-form-label">Participant name:</label>
+                            <input type="text" class="form-control" id="addParticipant_name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary text-body" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary text-body" onclick="addParticipant()">Add+</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <table class="table table-bordered">
         <thead>
         <tr>

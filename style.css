@@ -14,9 +14,9 @@ thead {
     background-color: lightgrey;
 }
 .one-size{
-    height: 2em;
+    height: 2.5em;
     width: 12em;
-    border-radius: 10px;
+    margin-bottom: 1%;
 }
 .form_add{
     width: 50%;
