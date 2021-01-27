@@ -38,3 +38,6 @@ thead {
 button:focus{
     outline: none;
 }
+#display_none{
+    display: none;
+}
