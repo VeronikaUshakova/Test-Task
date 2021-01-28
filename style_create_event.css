@@ -1,0 +1,46 @@
+body{
+    margin:0;
+}
+.one-size{
+    height: 2.5em;
+    width: 12em;
+    margin-bottom: 1%;
+}
+.form_add{
+    width: 50%;
+}
+.col-sm-3 button{
+    width:100%;
+}
+.form_button{
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    background-color: lightgrey;
+    border: 1px solid black;
+}
+.form_add, .form-group{
+    margin: 3%;
+}
+button:focus{
+    outline: none;
+}
+#display_none{
+    display: none;
+}
+.bi{
+    display: flex;
+    color: red;
+}
+.alert{
+    justify-content: space-between;
+    display: none;
+}
+#text{
+    margin-top: 3px;
+    margin-left: 14px;
+}
+.right{
+    display: flex;
+}

@@ -1,6 +1,10 @@
 update_filter();
+refresh_participants();
 var participants = [];
 
+function refresh_participants() {
+    localStorage.removeItem('participant_event');
+}
 function update_filter() {
     let members;
     if(document.getElementById('all_members') !== null) {
@@ -51,8 +55,31 @@ function  participant_add_event(){
 }
 
 // Create event(localstoradge)
-function create_event(){
-    let name_event = document.getElementById("input_name");
-    let participants = [];
-    participants
+function create_event() {
+    if(document.getElementById("input_name_event").value.trim()!=="" && document.getElementById('input_participant').value.trim() !== "") {
+        let new_event={};
+        new_event.name_event = document.getElementById("input_name_event").value;
+        new_event.participant = document.getElementById('input_participant').value.split(",");
+        new_event.day = document.getElementById('input_day').value;
+        new_event.time = document.getElementById('input_time').value;
+        let events = [];
+        if(localStorage.getItem("events") !== null) {
+            events = JSON.stringify(localStorage.getItem("events"));
+        }
+        events.push(new_event);
+        localStorage.setItem("events", events);
+    } else {
+        let message="Failed to create an event.";
+        if(document.getElementById("input_name_event").value.trim()==="") {
+            message += " Write name event, please."
+        }
+        if(document.getElementById('input_participant').value.trim() === "") {
+            message += " Choose participant, please."
+        }
+        let message_box = document.getElementById("alert");
+        message_box.style.display="flex";
+        let message_div;
+        message_div = document.getElementById("text");
+        message_div.innerHTML = message;
+    }
 }

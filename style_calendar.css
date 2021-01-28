@@ -41,3 +41,13 @@ button:focus{
 #display_none{
     display: none;
 }
+.bi{
+    display: flex;
+    color: red;
+}
+.alert{
+    display: flex;
+}
+.bi-x {
+    justify-content: flex-end;
+}
