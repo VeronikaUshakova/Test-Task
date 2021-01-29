@@ -56,20 +56,37 @@ function  participant_add_event(){
 
 // Create event(localstoradge)
 function create_event() {
+    let message="Failed to create an event.";
     if(document.getElementById("input_name_event").value.trim()!=="" && document.getElementById('input_participant').value.trim() !== "") {
-        let new_event={};
+        let new_event = {};
         new_event.name_event = document.getElementById("input_name_event").value;
         new_event.participant = document.getElementById('input_participant').value.split(",");
         new_event.day = document.getElementById('input_day').value;
         new_event.time = document.getElementById('input_time').value;
         let events = [];
-        if(localStorage.getItem("events") !== null) {
+        if (localStorage.getItem("events") !== null) {
             events = JSON.stringify(localStorage.getItem("events"));
         }
-        events.push(new_event);
-        localStorage.setItem("events", events);
+        let proverka = true;
+        for (let i = 0; i < events.length; i++) {
+            if (events[i].day === new_event.day && new_event.time === events[i].time) {
+                proverka = false;
+            }
+        }
+        if (proverka === true) {
+            events.push(new_event);
+            localStorage.setItem("events", events);
+            let message_box = document.getElementById("alert");
+            message_box.style.display = "none";
+        }else{
+            message+= " Time slot is already booked.";
+            let message_box = document.getElementById("alert");
+            message_box.style.display="flex";
+            let message_div;
+            message_div = document.getElementById("text");
+            message_div.innerHTML = message;
+        }
     } else {
-        let message="Failed to create an event.";
         if(document.getElementById("input_name_event").value.trim()==="") {
             message += " Write name event, please."
         }
